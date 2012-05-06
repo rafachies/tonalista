@@ -1,15 +1,27 @@
 package br.net.tonalista.model;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement(name = "balada")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Balada {
 
+	@XmlElement(name = "id")
 	private Integer id;
 	
+	@XmlElement(name = "nome")
 	private String nome;
 	
+	@XmlElement(name = "endereco")
 	private String endereco;
 	
+	@XmlElement(name = "telefone")
 	private String telefone;
 	
+	@XmlElement(name = "email")
 	private String emailDaLista;
 
 	public Integer getId() {
