@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/WEB-INF/templates/tonalista-layout.xhtml">
+
+	<ui:define name="content">
+		<h:form id="reg">
+			<h:panelGrid columns="4" footerClass="subtitle" headerClass="subtitlebig" styleClass="medium" columnClasses="subtitle,medium">
+					<h:panelGrid columns="1">
+						<h:graphicImage value="/resources/image/clash.png" alt="Clash Club" />
+						<h:selectBooleanCheckbox id="clashCheck" value="#{userPicked.clash}"/>
+					</h:panelGrid>
+					<h:panelGrid columns="1">
+						<h:graphicImage value="/resources/image/woods.png" alt="Woods" />
+						<h:selectBooleanCheckbox id="woodsCheck" value="#{userPicked.woods}"/>
+					</h:panelGrid>
+			</h:panelGrid>
+			<p>
+				<h:commandButton id="register" action="#{pickBaladaBean.pick}" value="!To Na Lista!" />
+				<h:outputText value=" Registered!" rendered="#{facesContext.postback and empty facesContext.messageList}" style="color: green;" />
+			</p>
+		</h:form>
+	</ui:define>
+</ui:composition>

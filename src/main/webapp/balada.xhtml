@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/WEB-INF/templates/tonalista-layout.xhtml">
+
+	<ui:define name="content">
+		<h:form id="reg">
+			<h2>Register</h2>
+			<table>
+				<tr>
+					<th style="text-align: right;">
+						<h:outputLabel for="nome" value="Name:" />
+					</th>
+					<td>
+						<h:inputText id="nome" value="#{newBalada.nome}" /> 
+						<h:message for="nome" errorClass="invalid" />
+					</td>
+				</tr>
+				<tr>
+					<th style="text-align: right;">
+						<h:outputLabel for="email" value="Email:" />
+					</th>
+					<td>
+						<h:inputText id="email" value="#{newBalada.emailDaLista}" />
+						<h:message for="email" errorClass="invalid" />
+					</td>
+				</tr>
+				<tr>
+					<th style="text-align: right;">
+						<h:outputLabel for="endereco" value="Endereco:" />
+					</th>
+					<td>
+						<h:inputText id="endereco" value="#{newBalada.endereco}" />
+						<h:message for="endereco" errorClass="invalid" />
+					</td>
+				</tr>
+				<tr>
+					<th style="text-align: right;">
+						<h:outputLabel for="telefone" value="Telefone:" />
+					</th>
+					<td>
+						<h:inputText id="telefone" value="#{newBalada.telefone}" />
+						<h:message for="telefone" errorClass="invalid" />
+					</td>
+				</tr>
+			</table>
+			<p>
+				<h:commandButton id="register" action="#{baladaServiceBean.create}" value="Registrar" />
+				<h:outputText value=" Registered!" rendered="#{facesContext.postback and empty facesContext.messageList}" style="color: green;" />
+			</p>
+		</h:form>
+	</ui:define>
+</ui:composition>
